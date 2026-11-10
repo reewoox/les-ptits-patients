@@ -29,6 +29,16 @@
   }
   window.ppConfetti = confetti;
 
+  // typographie française : espaces insécables avant ! ? ; : et dans les guillemets (textes écrits par le script)
+  function frTypo(el) {
+    var w = document.createTreeWalker(el, NodeFilter.SHOW_TEXT, null), n;
+    while ((n = w.nextNode())) {
+      var t = n.nodeValue;
+      var u = t.replace(/ ([!?;])/g, ' $1').replace(/ :/g, ' :').replace(/« /g, '« ').replace(/ »/g, ' »');
+      if (u !== t) n.nodeValue = u;
+    }
+  }
+
   // ---------------- LECTURE À VOIX HAUTE ----------------
   // Uniquement avec une voix française installée sur l'appareil (localService) : aucun texte ne part sur Internet.
   var voice = null;
@@ -149,12 +159,14 @@
           });
           row.appendChild(next);
           root.appendChild(row);
+          frTypo(why);
           next.focus();
         });
         ans.appendChild(b);
       });
       root.appendChild(ans);
       root.appendChild(why);
+      frTypo(root);
     }
     function renderEnd() {
       var end = document.createElement('div');
@@ -188,6 +200,7 @@
         end.appendChild(more);
       }
       root.appendChild(end);
+      frTypo(end);
       if (win) confetti();
     }
     root.tabIndex = -1;
@@ -220,6 +233,7 @@
       a.textContent = 'Imprimer mon diplôme';
       msg.appendChild(a);
     }
+    frTypo(msg);
     box.hidden = false;
   }
 
@@ -271,7 +285,7 @@
     var win = root.querySelector('.win');
     var need = items.filter(function (it) { return it.dataset.good === '1'; }).length;
     var got = 0;
-    function say(t) { bubble.textContent = t; }
+    function say(t) { bubble.textContent = t; frTypo(bubble); }
     function update() { count.textContent = 'Dans le sac : ' + got + ' / ' + need; }
     function drop(it) {
       if (it.dataset.good === '1') {
@@ -349,5 +363,18 @@
     each('.game', initGame);
     initProgress();
     initVideo();
+    each('[data-reset]', function (b) {
+      b.addEventListener('click', function () {
+        if (!window.confirm('Effacer les étoiles, les épisodes vus et les jeux réussis sur cet appareil ?')) return;
+        try {
+          for (var k = localStorage.length - 1; k >= 0; k--) {
+            var key = localStorage.key(k);
+            if (key && key.indexOf('pp:') === 0 && key !== 'pp:prenom') localStorage.removeItem(key);
+          }
+        } catch (e) { /* stockage indisponible */ }
+        b.textContent = 'Progression effacée';
+        b.disabled = true;
+      });
+    });
   });
 })();

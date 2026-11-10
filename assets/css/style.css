@@ -305,3 +305,8 @@ details.transcript[open] summary::after { content: "–"; }
 
 /* « Joue et apprends » : les 4 cartes sur une ligne quand il y a la place */
 .quad { grid-template-columns: repeat(auto-fit, minmax(min(100%, 230px), 1fr)); }
+.howto { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 240px), 1fr)); gap: 18px; }
+.how { padding: 20px 22px; display: grid; gap: 8px; align-content: start; }
+.how .nb { width: 44px; height: 44px; border-radius: 50%; background: var(--sun); border: var(--line); display: grid; place-items: center; font-family: var(--display); font-weight: 700; font-size: 22px; }
+.how h3 { font-size: 22px; }
+.how p { color: var(--muted); font-size: 17px; }
