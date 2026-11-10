@@ -14,6 +14,8 @@
 <link rel="canonical" href="https://reewoox.github.io/les-ptits-patients/imprimer/coloriage-doc.html">
 <meta property="og:locale" content="fr_FR">
 <link rel="icon" href="../assets/img/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="../assets/img/icon-192.png">
+<link rel="manifest" href="../manifest.webmanifest">
 <link rel="preload" href="../assets/fonts/fredoka.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="../assets/css/style.css">
 <script src="../assets/js/app.js" defer></script>
@@ -23,7 +25,7 @@
 
 <header class="top"><div class="wrap">
 <a class="brand" href="../index.html"><img src="../assets/img/logo.png" alt="Les P'tits Patients — accueil" width="320" height="142"></a>
-<nav class="nav" aria-label="Menu principal"><a href="../index.html#videos">Les vidéos</a><a href="../jeu.html">Jouer</a><a href="../fiches.html" aria-current="page">À imprimer</a><a href="../parents.html">Parents</a><a href="../sophie.html">Dr Sophie</a></nav>
+<nav class="nav" aria-label="Menu principal"><a href="../index.html#videos">Les vidéos</a><a href="../jeux.html">Jouer</a><a href="../fiches.html" aria-current="page">À imprimer</a><a href="../parents.html">Parents</a><a href="../sophie.html">Dr Sophie</a></nav>
 </div></header>
 <main id="main">
 <style>
@@ -37,6 +39,12 @@ body { background: #E9EDF3; }
 .chk li { display: flex; gap: 12px; align-items: center; }
 .chk li::before { content: ""; flex: none; width: 24px; height: 24px; border: 3px solid #1D3557; border-radius: 6px; }
 .lines p { border-bottom: 2px dashed #9AA8BB; padding: 10px 0 4px; font-weight: 700; min-height: 44px; }
+.memo { list-style: none; padding: 0; margin: 0; display: grid; gap: 12px; font-size: 19px; font-weight: 600; }
+.memo li { display: grid; grid-template-columns: 32px 1fr; gap: 12px; align-items: start; }
+.memo li::before { content: "✓"; width: 30px; height: 30px; border-radius: 50%; border: 3px solid #1D3557; display: grid; place-items: center; font-weight: 900; color: #04805F; }
+.nbs { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-top: 12px; }
+.nb { display: grid; grid-template-columns: minmax(96px, auto) 1fr; gap: 12px; align-items: center; border: 3px solid #1D3557; border-radius: 16px; padding: 10px 14px; font-size: 15px; line-height: 1.3; }
+.nb .n { font-family: var(--display); font-weight: 700; font-size: 36px; white-space: nowrap; color: #D62F57; text-align: center; line-height: 1; }
 @media print { body { background: #fff; } .bar, .top, footer, .draft, .skip { display: none !important; } .sheet { border: none; margin: 0; width: 100%; padding: 0; } main { padding: 0; } }
 </style><div class="bar"><button class="btn" type="button" onclick="window.print()">Imprimer</button><a class="btn alt" href="../fiches.html">← Toutes les fiches</a></div><div class="sheet"><h1>Coloriage : le médecin</h1><img src="../assets/img/coloriage-doc.png" alt="Dessin à colorier : le médecin" width="1400" height="1000" style="width:100%;height:auto"><p style="text-align:center;margin-top:18px;font-size:14px;color:#4A5B72">Les P'tits Patients · fiche relue par Dr Sophie Lefevre, pédiatre · ne remplace pas l'avis d'un médecin · urgence : 15 ou 112</p></div>
 </main>

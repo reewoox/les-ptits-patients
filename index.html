@@ -14,6 +14,8 @@
 <link rel="canonical" href="https://reewoox.github.io/les-ptits-patients/index.html">
 <meta property="og:locale" content="fr_FR">
 <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="assets/img/icon-192.png">
+<link rel="manifest" href="manifest.webmanifest">
 <link rel="preload" href="assets/fonts/fredoka.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="assets/css/style.css">
 <script src="assets/js/app.js" defer></script>
@@ -23,7 +25,7 @@
 
 <header class="top"><div class="wrap">
 <a class="brand" href="index.html"><img src="assets/img/logo.png" alt="Les P'tits Patients — accueil" width="320" height="142"></a>
-<nav class="nav" aria-label="Menu principal"><a href="index.html#videos" aria-current="page">Les vidéos</a><a href="jeu.html">Jouer</a><a href="fiches.html">À imprimer</a><a href="parents.html">Parents</a><a href="sophie.html">Dr Sophie</a></nav>
+<nav class="nav" aria-label="Menu principal"><a href="index.html#videos" aria-current="page">Les vidéos</a><a href="jeux.html">Jouer</a><a href="fiches.html">À imprimer</a><a href="parents.html">Parents</a><a href="sophie.html">Dr Sophie</a></nav>
 </div></header>
 <main id="main">
 <section class="hero"><div class="wrap">
@@ -35,11 +37,22 @@
 </div>
 <div class="hero-art"><img src="assets/img/hero.webp" alt="Léo, sa grande sœur Inès et le médecin font coucou." width="1200" height="880"></div>
 </div></section>
+<section class="trailer"><div class="wrap"><div class="trailer-in">
+<div class="card player"><video controls preload="none" playsinline poster="assets/img/bande-annonce.webp" aria-label="Bande-annonce des P'tits Patients">
+<source src="assets/video/bande-annonce.mp4" type="video/mp4">Ton navigateur ne peut pas lire cette vidéo.</video></div>
+<div class="txt"><h2>Découvre Les P'tits Patients en 30 secondes !</h2>
+<p>Léo, Inès, le médecin… et la voix de Dr Sophie Lefevre. Six épisodes pour tout comprendre : avant, pendant et après le médecin, les piqûres, les médicaments et les urgences.</p>
+<p><a class="btn" href="episodes/avant.html">▶ Commencer par l'épisode 1</a></p></div>
+</div></div></section>
 
 <section id="videos"><div class="wrap">
 <div class="sec-head"><h2><span class="squiggle">Les épisodes</span></h2><p>Avant, pendant et après la consultation, les piqûres, les médicaments, les urgences : regarde, puis teste-toi avec le quiz de chaque épisode !</p></div>
+<div class="card parcours" id="parcours" data-eps="avant,pendant,apres,piqures,medicaments,urgences" hidden>
+<div class="stars6" aria-hidden="true"><span title="Épisode 1">★</span><span title="Épisode 2">★</span><span title="Épisode 3">★</span><span title="Épisode 4">★</span><span title="Épisode 5">★</span><span title="Épisode 6">★</span></div>
+<div><h3>Mon parcours de P'tit Patient</h3><p class="msg" aria-live="polite"></p></div>
+</div>
 <div class="grid-ep"><a class="card ep" href="episodes/avant.html">
-<span class="thumb"><img src="assets/img/ep-avant.webp" alt="" width="960" height="540" loading="lazy"><span class="play" aria-hidden="true"><svg width="22" height="22" viewBox="0 0 20 20"><path d="M5 3 L17 10 L5 17 Z" fill="#1D3557"/></svg></span></span>
+<span class="thumb"><img src="assets/img/ep-avant.webp" alt="" width="960" height="540" loading="lazy"><span class="play" aria-hidden="true"><svg width="22" height="22" viewBox="0 0 20 20"><path d="M5 3 L17 10 L5 17 Z" fill="#1D3557"/></svg></span><span class="seen" data-seen="avant" hidden>✓ Déjà vu</span></span>
 <span class="body"><span class="meta"><span class="pill teal">Épisode 1</span><span class="stars" data-stars="avant"></span></span>
 <h3>Prêt pour le médecin !</h3><p>Bien se préparer avant la consultation</p></span></a>
 <a class="card ep" href="episodes/pendant.html">
@@ -66,10 +79,20 @@
 
 <section><div class="wrap">
 <div class="sec-head"><h2><span class="squiggle">Joue et apprends</span></h2></div>
-<div class="trio">
-<a class="card tile" href="jeu.html"><span class="ico" style="background:#BDE0FE"><img src="assets/img/sac.webp" alt="" width="64" height="64"></span><h3>Prépare ton sac</h3><p>Glisse dans le sac tout ce qu'il faut pour aller chez le médecin… et pas le poisson rouge !</p></a>
-<a class="card tile" href="episodes/avant.html#quiz"><span class="ico" style="background:#FFE8D6"><img src="assets/img/item-questions.webp" alt="" width="64" height="64"></span><h3>Les quiz</h3><p>Cinq questions après chaque épisode. Tout bon ? Tu gagnes ton diplôme !</p></a>
-<a class="card tile" href="fiches.html"><span class="ico" style="background:#CBF3F0"><img src="assets/img/item-teddy.webp" alt="" width="64" height="64"></span><h3>À imprimer</h3><p>La checklist « Prêt pour le médecin ! », ta liste de questions, des coloriages et ton diplôme.</p></a>
+<div class="trio quad">
+<a class="card tile" href="jeu.html"><span class="ico" style="background:#BDE0FE"><img src="assets/img/sac.webp" alt="" width="64" height="64"></span><span class="meta"><span class="pill teal">Épisode 1</span><span class="done" data-done="jeu:sac" hidden>✓ Réussi</span></span><h3>Prépare ton sac</h3><p>Glisse dans le sac tout ce qu&#x27;il faut pour aller chez le médecin… et pas le poisson rouge !</p></a>
+<a class="card tile" href="jeu-instruments.html"><span class="ico" style="background:#FFE8D6"><img src="assets/img/item-stetho.webp" alt="" width="64" height="64"></span><span class="meta"><span class="pill teal">Épisode 2</span><span class="done" data-done="jeu:instruments" hidden>✓ Réussi</span></span><h3>Le bon instrument</h3><p>Stéthoscope, otoscope, toise… Sais-tu à quoi sert chaque instrument du médecin ?</p></a>
+<a class="card tile" href="jeu-numeros.html"><span class="ico" style="background:#FFE0E6"><img src="assets/img/item-phone.webp" alt="" width="64" height="64"></span><span class="meta"><span class="pill teal">Épisode 6</span><span class="done" data-done="jeu:numeros" hidden>✓ Réussi</span></span><h3>Allô, les secours !</h3><p>15, 17, 18, 112 : sais-tu quel numéro appeler, et quoi dire au téléphone ?</p></a>
+<a class="card tile" href="fiches.html"><span class="ico" style="background:#CBF3F0"><img src="assets/img/item-teddy.webp" alt="" width="64" height="64"></span><h3>À imprimer</h3><p>La checklist « Prêt pour le médecin ! », les fiches mémo, les numéros d'urgence, des coloriages et ton diplôme.</p></a>
+</div>
+</div></section>
+
+<section><div class="wrap">
+<div class="sec-head"><h2><span class="squiggle">Les personnages</span></h2></div>
+<div class="chars">
+<article class="card char"><img src="assets/img/leo.webp" alt="" width="420" height="532" loading="lazy"><div><h3>Léo, 7 ans</h3><p>Le petit frère. Curieux comme tout, il pose toutes les questions… même les plus rigolotes !</p></div></article>
+<article class="card char"><img src="assets/img/ines.webp" alt="" width="420" height="532" loading="lazy"><div><h3>Inès, 11 ans</h3><p>La grande sœur. Elle adore les « Le savais-tu ? », et aide Léo à se préparer.</p></div></article>
+<article class="card char"><img src="assets/img/doc.webp" alt="" width="420" height="532" loading="lazy"><div><h3>Le médecin</h3><p>Il ne parle pas, mais il montre tout : ses instruments, ses gestes, et ce qu'il faut faire.</p></div></article>
 </div>
 </div></section>
 

@@ -1,0 +1,23 @@
+{
+ "name": "Les P'tits Patients",
+ "short_name": "P'tits Patients",
+ "description": "Les bons réflexes avant et après le médecin, pour les 6–13 ans.",
+ "lang": "fr",
+ "start_url": "./index.html",
+ "scope": "./",
+ "display": "standalone",
+ "background_color": "#FFF8E7",
+ "theme_color": "#FFF8E7",
+ "icons": [
+  {
+   "src": "assets/img/icon-192.png",
+   "sizes": "192x192",
+   "type": "image/png"
+  },
+  {
+   "src": "assets/img/icon-512.png",
+   "sizes": "512x512",
+   "type": "image/png"
+  }
+ ]
+}
