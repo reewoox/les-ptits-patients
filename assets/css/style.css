@@ -359,3 +359,13 @@ a, button, summary, .item { -webkit-tap-highlight-color: rgba(77, 150, 255, .2);
   .hero-art { max-width: none; margin: 0; }
   .hero .lead { max-width: 34ch; }
 }
+
+/* ---------- onglet « Prendre rendez-vous » (Doctolib de Dr Sophie, avec son accord) ---------- */
+.nav a.nav-rdv { background: #fff; border-color: var(--navy); }
+.nav a.nav-rdv:hover { background: var(--mint); border-color: var(--navy); }
+.nav a .rdv-short { display: none; }
+/* libellé court « Rendez-vous » jusqu'aux tablettes : le menu tient sur une ligne (tablette) ou deux (téléphone) */
+.nav a.nav-rdv { gap: 5px; }
+@media (max-width: 1100px) { .nav a .rdv-long { display: none; } .nav a .rdv-short { display: inline; } }
+@media (max-width: 380px) { .nav { gap: 4px; } .nav a { padding: 4px 11px; } }
+.sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; border: 0; }
